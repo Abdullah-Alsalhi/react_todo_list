@@ -5,3 +5,4 @@ export { default as Todo } from "./Todo";
 export { default as AddTodo } from "./AddTodo";
 export { default as InputField } from "./InputField";
 export { default as TextAreaField } from "./TextAreaField";
+export { default as Modal } from "./Modal";

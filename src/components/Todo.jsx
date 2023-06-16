@@ -9,10 +9,16 @@ const Todo = ({
 	className = "",
 	// eslint-disable-next-line react/prop-types, no-unused-vars
 	status = false,
+	// eslint-disable-next-line react/prop-types
+	handleDelete = null,
+	// eslint-disable-next-line react/prop-types
+	handleEdit = null,
+	// eslint-disable-next-line react/prop-types
+	handleisDone = null,
 	...props
 }) => (
 	<div
-		className={`my-3 block rounded-lg bg-stone-800 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ${className}`}
+		className={`my-3 shadow-2xl block rounded-lg bg-stone-800 p-6 ${className}`}
 		{...props}
 	>
 		{title && (
@@ -27,9 +33,18 @@ const Todo = ({
 				</div>
 				<div className="justify-self-end">
 					<div className="flex justify-end items-center">
-						<AiOutlineFileDone className="text-orange-600  mx-1 hover:text-orange-700 text-2xl hover:cursor-pointer" />
-						<AiFillEdit className="text-green-600 text-2xl mx-1 hover:text-green-700 hover:cursor-pointer" />
-						<AiFillDelete className="text-red-600 text-2xl mx-1 hover:text-red-700 hover:cursor-pointer" />
+						<AiOutlineFileDone
+							className="text-orange-600  mx-1 hover:text-orange-700 text-2xl hover:cursor-pointer"
+							onClick={() => handleisDone()}
+						/>
+						<AiFillEdit
+							className="text-green-600 text-2xl mx-1 hover:text-green-700 hover:cursor-pointer"
+							onClick={() => handleEdit()}
+						/>
+						<AiFillDelete
+							className="text-red-600 text-2xl mx-1 hover:text-red-700 hover:cursor-pointer"
+							onClick={() => handleDelete()}
+						/>
 					</div>
 				</div>
 			</div>
